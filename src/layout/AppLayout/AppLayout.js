@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
 import { Outlet } from "react-router-dom"; // 라우터 안의 자손들을 가져오는 역할
 import logoImage from "../../assets/images/logo.png";
 import "./AppLayout.style.css";
@@ -11,35 +12,46 @@ const AppLayout = () => {
   return (
     <div>
       <Navbar
+        key="xxl"
+        expand="xxl"
         bg="dark"
         data-bs-theme="dark"
-        expand="lg"
         className="bg-body-tertiary netflox-navbar"
       >
         <Container fluid>
           <Navbar.Brand href="#" className="netflox-logo">
             <img src={logoImage} alt="Netflox" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0 netflox-nav-link"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/movies">Movies</Nav.Link>
-            </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2 netflox-search-input"
-                aria-label="Search"
-              />
-              <Button variant="danger netflox-search-button">Search</Button>
-            </Form>
-          </Navbar.Collapse>
+          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-xxl`} />
+          <Navbar.Offcanvas
+            id={`offcanvasNavbar-expand-xxl`}
+            aria-labelledby={`offcanvasNavbarLabel-expand-xxl`}
+            placement="end"
+            className="netflox-offcanvas"
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-xxl`}>
+                <Navbar.Brand href="#" className="netflox-logo">
+                  <img src={logoImage} alt="Netflox" />
+                </Navbar.Brand>
+              </Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              <Nav className="justify-content-end flex-grow-1 pe-3 netflox-nav-link">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/movies">Movies</Nav.Link>
+              </Nav>
+              <Form className="d-flex neflox-search">
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-2 netflox-search-input"
+                  aria-label="Search"
+                />
+                <Button variant="danger netflox-search-button">Search</Button>
+              </Form>
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
         </Container>
       </Navbar>
       <Outlet />
