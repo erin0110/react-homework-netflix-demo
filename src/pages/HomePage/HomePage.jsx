@@ -1,4 +1,5 @@
 import Banner from "./components/Banner/Banner";
+import PopularMovieSlide from "./components/PopularMovieSlide/PopularMovieSlide";
 import "./HomePage.style.css";
 
 /**
@@ -11,6 +12,7 @@ const HomePage = () => {
   return (
     <div>
       <Banner />
+      <PopularMovieSlide />
       <p>HomePage</p>
     </div>
   );
