@@ -1,0 +1,23 @@
+.pageLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+}
+.pageLoading .spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.pageLoading .spinner > div:nth-of-type(1) {
+  animation-delay: 0s;
+}
+.pageLoading .spinner > div:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+.pageLoading .spinner > div:nth-of-type(3) {
+  animation-delay: 0.2s;
+}

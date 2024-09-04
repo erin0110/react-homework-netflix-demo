@@ -1,5 +1,7 @@
 import Banner from "./components/Banner/Banner";
 import PopularMovieSlide from "./components/PopularMovieSlide/PopularMovieSlide";
+import TopRatedMovieSlide from "./components/TopRatedMovieSlide/TopRatedMovieSlide";
+import UpComingMovieSlide from "./components/UpComingMovieSlide/UpComingMovieSlide";
 import "./HomePage.style.css";
 
 /**
@@ -10,11 +12,14 @@ import "./HomePage.style.css";
  */
 const HomePage = () => {
   return (
-    <div>
+    <main>
       <Banner />
-      <PopularMovieSlide />
-      <p>HomePage</p>
-    </div>
+      <section className="movie-list">
+        <PopularMovieSlide />
+        <TopRatedMovieSlide />
+        <UpComingMovieSlide />
+      </section>
+    </main>
   );
 };
 

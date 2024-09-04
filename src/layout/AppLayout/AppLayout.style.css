@@ -1,7 +1,9 @@
 .netflox-navbar {
   background-color: #000 !important;
 }
-.netflox-nav-link a {
+.netflox-nav-link a,
+.netflox-nav-link a:hover,
+.netflox-nav-link a:focus {
   color: #fff;
 }
 .netflox-logo {

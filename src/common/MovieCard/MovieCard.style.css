@@ -1,9 +1,12 @@
 .movie-card {
-  width: 220px;
-  height: 330px;
+  aspect-ratio: 2 / 3;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
   background-size: cover;
   cursor: pointer;
   transition: 0.5s;
+  border-radius: 12px;
 }
 
 .movie-card__overlay {
@@ -15,6 +18,8 @@
   font-weight: bold;
   overflow-wrap: break-word;
   transition: all 1s;
+  border-radius: 12px;
+  padding: 12px;
 }
 
 .movie-card__overlay:hover {
@@ -23,26 +28,32 @@
 
 .movie-card:hover {
   z-index: 2;
-  transform: scale(1.3) translateZ(20px);
+  transform: scale(1.1) translateZ(20px);
 }
 .movie-card h1 {
-  font-size: 28px;
-  word-break: break-word;
+  font-size: 20px;
 }
 .movie-badge {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 0 5px;
-  padding-top: 20px;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 10px;
+}
+.movie-badge > span {
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 3px 6px;
+  border-radius: 4px;
 }
 .movie-card__info {
   padding-top: 10px;
 }
 .movie-card__info h4 {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
-  padding-top: 5px;
+  padding-top: 20px;
 }
 .movie-card__info h4:before {
   content: "";
@@ -50,14 +61,15 @@
   vertical-align: top;
   width: 16px;
   height: 16px;
-  background: url(../../../../assets/images/icon_vote.png) 50% 50% / 100% auto
+  background: url(../../assets/images/icon_vote.png) 50% 50% / 100% auto
     no-repeat;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 .movie-card__info strong {
   display: block;
+  font-size: 16px;
   line-height: 1;
-  padding-top: 8px;
+  padding-top: 6px;
 }
 .movie-card__info strong:before {
   content: "";
@@ -65,29 +77,38 @@
   vertical-align: top;
   width: 16px;
   height: 16px;
-  background: url(../../../../assets/images/icon_pick.png) 50% 50% / 100% auto
+  background: url(../../assets/images/icon_pick.png) 50% 50% / 100% auto
     no-repeat;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 
 .movie-card__info span {
   display: block;
+  font-size: 12px;
   line-height: 1;
   padding-top: 8px;
-}
-.movie-card__info span:before {
-  margin-right: 5px;
 }
 .movie-card__info span i {
   display: inline-flex;
   align-items: center;
-  height: 30px;
-  font-size: 12px;
+  height: 24px;
+  font-size: 11px;
   color: #fff;
   background-color: #000;
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 0 10px;
 }
 .movie-card__info span i.adult {
   background-color: var(--primary-color);
+}
+
+@media (max-width: 1023px) {
+  .movie-card__overlay {
+    opacity: 1;
+    background-color: rgba(43, 41, 41, 0.7);
+  }
+
+  .movie-card:hover {
+    transform: none;
+  }
 }

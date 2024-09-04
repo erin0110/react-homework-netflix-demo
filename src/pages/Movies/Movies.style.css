@@ -1,0 +1,22 @@
+.sub-page {
+  padding: 60px 0 80px;
+  margin: 0 auto;
+}
+
+.movie-filter {
+  border: 1px solid red;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.netflox-pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+}
+
+@media (max-width: 1023px) {
+  .sub-page {
+    padding: 40px 20px 60px;
+  }
+}

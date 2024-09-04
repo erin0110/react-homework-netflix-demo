@@ -2,10 +2,10 @@ import Alert from "react-bootstrap/Alert";
 import Loading from "../../../../common/Loading/Loading";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
 import { movieResponsive } from "../../../../constants/responsive";
-import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
+import { useTopRatedMoviesQuery } from "../../../../hooks/useTopRatedMovies";
 
-const PopularMovieSlide = () => {
-  const { data, isLoading, isError, error } = usePopularMoviesQuery();
+const TopRatedMovieSlide = () => {
+  const { data, isLoading, isError, error } = useTopRatedMoviesQuery();
 
   if (isLoading) {
     return <Loading />;
@@ -16,11 +16,11 @@ const PopularMovieSlide = () => {
 
   return (
     <MovieSlider
-      title="Popular Movies"
+      title="TopRated Movies"
       movies={data.results}
       responsive={movieResponsive}
     />
   );
 };
 
-export default PopularMovieSlide;
+export default TopRatedMovieSlide;
