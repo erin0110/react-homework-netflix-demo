@@ -18,7 +18,7 @@ import "./Movies.style.css";
  * 3. page값이 바뀔 때마다 useSearchMovie에 page까지 넣어서 fetch해주기
  */
 const Movies = () => {
-  const [query, setQuery] = useSearchParams();
+  const [query] = useSearchParams();
   const [page, setPage] = useState(1);
   const keyword = query.get("q");
 
