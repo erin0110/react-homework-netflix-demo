@@ -12,12 +12,14 @@ import "./AppLayout.style.css";
 const AppLayout = () => {
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
+  const [offcanvasOpen, setOffcanvasOpen] = useState(false);
 
   const searchByKeyword = (event) => {
     event.preventDefault();
     // url을 바꿔주기
     navigate(`/movies?q=${keyword}`);
     setKeyword("");
+    setOffcanvasOpen(false);
   };
 
   return (
@@ -33,12 +35,17 @@ const AppLayout = () => {
           <Navbar.Brand href="/" className="netflox-logo">
             <img src={logoImage} alt="Netflox" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-xxl`} />
+          <Navbar.Toggle
+            aria-controls={`offcanvasNavbar-expand-xxl`}
+            onClick={() => setOffcanvasOpen(true)}
+          />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-xxl`}
             aria-labelledby={`offcanvasNavbarLabel-expand-xxl`}
             placement="end"
             className="netflox-offcanvas"
+            show={offcanvasOpen}
+            onHide={() => setOffcanvasOpen(false)}
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-xxl`}>
