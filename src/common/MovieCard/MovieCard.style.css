@@ -30,8 +30,15 @@
   z-index: 2;
   transform: scale(1.1) translateZ(20px);
 }
-.movie-card h1 {
+.movie-card h2 {
   font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 2줄 넘어가면 말줄임 */
+  -webkit-box-orient: vertical;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 .movie-badge {
   display: flex;

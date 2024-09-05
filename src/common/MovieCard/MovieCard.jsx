@@ -22,13 +22,15 @@ const MovieCard = ({ movie }) => {
       className="movie-card"
     >
       <div className="movie-card__overlay">
-        <h1 className="pb-2">{movie.title}</h1>
+        <h2>{movie.title}</h2>
         <div className="movie-badge">
-          {showGenre(movie.genre_ids).map((id, index) => (
-            <Badge bg="danger" key={index}>
-              {id}
-            </Badge>
-          ))}
+          {showGenre(movie.genre_ids)
+            .slice(0, 5)
+            .map((id, index) => (
+              <Badge bg="danger" key={index}>
+                {id}
+              </Badge>
+            ))}
         </div>
         <div className="movie-card__info">
           <h4>{movie.vote_average}</h4>
