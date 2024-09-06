@@ -22,7 +22,7 @@ function App() {
           {/* 🔻Route에 index를 쓰면 부모의 path를 그대로 쓰겠다는 의미 */}
           <Route index element={<HomePage />} />
           {/* 🔻movies 이하의 페이지가 많은 경우 이런식으로 nested route를 사용할 수 있다. */}
-          <Route path="movies">
+          <Route path="/movies">
             <Route index element={<Movies />} />
             <Route path=":id" element={<MovieDetail />} />
           </Route>
